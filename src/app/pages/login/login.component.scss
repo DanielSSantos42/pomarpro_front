@@ -1,0 +1,64 @@
+html,body{
+
+    background-image: url('/assets/img/teste.webp');
+    background-size: cover;
+ }
+ 
+ .login{
+     margin-left: 900px;
+    
+     
+ }
+ 
+ .login img{
+     margin-top: -150px;
+     width: 550px;
+ }
+ 
+ 
+ .login form button{
+     background-color: orange;
+     color: black;
+     border-radius: 5px;
+     border:black solid;
+     margin-top: 30px;
+     margin-left: 200px;
+     height: 80px;
+     width: 150px;
+     font-size: 50px;
+ }
+ 
+ 
+ .login form input{
+     background-color: orange;
+     border-radius: 5px;
+     border:black solid;
+     display: flex;
+     justify-content: space-evenly;
+     flex-direction: column;
+     width: 280px;
+     height: 60px;
+     margin-top: 30px;
+     margin-left: 140px;
+     
+ }
+ 
+ ::placeholder{
+     color: black;
+     
+ }
+ 
+ footer p{
+     margin-left: 150px;
+     width: 255px;
+     height: 60px;
+     font-size: large;
+     margin-top: 50px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 

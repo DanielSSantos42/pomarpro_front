@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+html,body{
+    margin: 0;
+    padding: 0;
+    width: 100vh;
+    height: 100%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+ }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.pagina{
+    width: calc(100vw - 280px);
+    height: 100vh;
+    position: absolute;
+    top:0;
+    right: 0;
+    
+
+}
