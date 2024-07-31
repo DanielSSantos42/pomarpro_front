@@ -2,9 +2,9 @@
 
 <div class="pagina">
       <header>
-        <h1>Administração | Cadastro de usuários</h1>
+        <h1>Administração | Materiais</h1>
       </header>
-      <form [formGroup]="formulario">
+      <form [formGroup]="material">
          <div>
             <mat-form-field appearance="outline" color="warn">
                <mat-label>Nome</mat-label>
@@ -12,40 +12,25 @@
             </mat-form-field>
             
             <mat-form-field appearance="outline" color="warn">
-               <mat-label>Sobrenome</mat-label>
-               <input matInput formControlName="sobrenome">
+               <mat-label>Valor</mat-label>
+               <input matInput formControlName="valor">
             </mat-form-field>
          </div>
          
          <div>
             <mat-form-field appearance="outline" color="warn" class="grande">
-                  <mat-label>Endereço</mat-label>
-                  <input matInput formControlName="endereco">
+                  <mat-label>Tipo</mat-label>
+                  <input matInput formControlName="tipo">
                   </mat-form-field> 
                </div>
          
          <div>
          <mat-form-field appearance="outline" color="warn">
-         <mat-label>Telefone</mat-label>
-         <input matInput formControlName="telefone">
+         <mat-label>Fornecedor</mat-label>
+         <input matInput formControlName="fornecedor">
          </mat-form-field> 
          </div>
          
-         <div>
-         <mat-form-field appearance="outline" color="warn">
-            <mat-label>Email</mat-label>
-            <input matInput formControlName="email">
-            </mat-form-field> 
-         </div>
-            
-         
-               
-            <div>
-            <mat-form-field appearance="outline" color="warn">
-                  <mat-label>Login</mat-label>
-                  <input matInput formControlName="login">
-                  </mat-form-field> 
-                  </div>
                
                <div class="controles" >
                   <button mat-raised-button color="accent" [disabled]="formulario.enabled"  (click)="onIncluir()">Incluir</button>
