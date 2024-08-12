@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+
+<div class="pagina">
+      <header>
+        <h1>Administração | Produto</h1>
+      </header>
+      <form [formGroup]="produto">
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Descrição</mat-label>
+               <input matInput formControlName="descricao">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Unidade de Medida</mat-label>
+               <input matInput formControlName="unidade_medida">
+            </mat-form-field>
+         </div>
+         
+         <div>
+            <mat-form-field appearance="outline" color="warn" class="warn">
+                  <mat-label>Tipo</mat-label>
+                  <input matInput formControlName="tipo">
+                  </mat-form-field> 
+               
+                  <mat-form-field appearance="outline" color="warn" class="warn">
+                  <mat-label>Valor</mat-label>
+                  <input matInput formControlName="valor">
+                  </mat-form-field> 
+               
+                </div>
+                
+         <div class="controles" >
+            <button mat-raised-button color="accent" [disabled]="produto.enabled"  (click)="onIncluir()">Incluir</button>
+            <button mat-raised-button color="accent" [disabled]="produto.invalid"  (click)="onSalvar()">Salvar</button>
+            <button mat-raised-button color="accent" [disabled]="produto.disabled" (click)="onCancelar()">Cancelar</button>
+         </div>
+</form>
+<div class="relat">
+      <h2>Produtos cadastrados</h2>
+      <table>
+         <tr>
+            <th>Ação</th>
+            <th>Descrição</th>
+            <th>Unidade de Medida</th>
+            <th>Tipo</th>
+            <th>Valor</th>
+         </tr>
+         <tr *ngFor="let produto of relat">
+            <td><button>Excluir</button></td>
+            <td>{{produto.descricao}} </td>
+            <td>{{produto.unidade_medida}}</td>
+            <td>{{produto.tipo}}</td>
+            <td>{{produto.valor}}</td>  
+         </tr>
+      </table>
+</div>
+             
+   

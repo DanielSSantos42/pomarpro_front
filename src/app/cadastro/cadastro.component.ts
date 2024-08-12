@@ -2,46 +2,47 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { MaterialService } from '../services/material.service';
+import { ProdutoService } from '../services/produto.service';
+import { CadastroService } from '../services/cadastro.service';
 
 @Component({
-  selector: 'app-material',
-  templateUrl: './material.component.html',
-  styleUrl: './material.component.scss',
+  selector: 'app-cadastro',
+  templateUrl: './cadastro.component.html',
+  styleUrl: './cadastro.component.scss',
 })
-export class MaterialComponent {
+export class CadastroComponent {
   constructor(private snackbar: MatSnackBar,
-    private materialService:MaterialService
+    private cadastroService:CadastroService
   ) {
-    this.buscaMateriais()
+    this.buscaCadastros()
   }
 
   //Inicializa o formulário
-  material: FormGroup = new FormGroup({
+  cadastro: FormGroup = new FormGroup({
     id: new FormControl(null),
-    nome: new FormControl('', Validators.required),
-    valor: new FormControl('', Validators.required),
-    tipo: new FormControl('', Validators.required),
-    fornecedor: new FormControl('', Validators.required),
+    apelido: new FormControl('', Validators.required),
+    num_linha: new FormControl('', Validators.required),
+    num_coluna: new FormControl('', Validators.required),
   });
 
   
   //Métodos dos controles do formulário
   onIncluir(){
-    this.material.reset();
-    this.material.enable();
+    this.cadastro.reset();
+    this.cadastro.enable();
   }
  
   onSalvar(){
     //Guarda as informações em uma variável para melhorar acesso
-    let info = this.material.value;
+    let info = this.cadastro.value;
     //Verifica se está inserindo ou alterando com base no valor do ID (se for null, está inserido, senão está alterando)
     if(info.id == null){
       //Irá inserir no banco de dados um usuário
-      this.materialService.addMaterial(info).subscribe({
+      this.cadastroService.addCadastro(info).subscribe({
         next: (resposta)=>{
            console.log(resposta);
            this.snackbar.open(
-            "Material adicionado com sucesso!",
+            "Cadastro adicionado com sucesso!",
             "OK",
             {
               verticalPosition:'top',
@@ -72,16 +73,16 @@ export class MaterialComponent {
   }
 
   onCancelar(){
-     this.material.reset();
-     this.material.disable();
+     this.cadastro.reset();
+     this.cadastro.disable();
   }
 
   // Função para buscar as informações e usuários
  
   relat: any[] = [];
 
-  buscaMateriais(){
-    this.materialService.getMateriais().subscribe({
+  buscaCadastros(){
+    this.cadastroService.getCadastros().subscribe({
       next:(resposta) =>{
         console.log(resposta);
         this.relat = resposta.body;
@@ -95,5 +96,3 @@ export class MaterialComponent {
 
 
 }
-
-

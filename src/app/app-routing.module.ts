@@ -4,6 +4,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CadUsuarioComponent } from './pages/usuario/cad-usuario/cad-usuario.component';
 import { MaterialComponent } from './material/material.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 
 const routes: Routes = [
@@ -11,7 +13,9 @@ const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'home',component:HomeComponent},
   {path:'cadUsuario',component:CadUsuarioComponent},
-  {path:'material', component: MaterialComponent}
+  {path:'material', component: MaterialComponent},
+  {path:'produto', component: ProdutoComponent},
+  {path:'cadastro', component: CadastroComponent}
 ];
 
 @NgModule({

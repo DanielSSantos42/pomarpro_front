@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+
+<div class="pagina">
+      <header>
+        <h1>Pomar | Cadastro</h1>
+      </header>
+      <form [formGroup]="cadastro">
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Apelido</mat-label>
+               <input matInput formControlName="apelido">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Número da linha</mat-label>
+               <input matInput formControlName="num_linha">
+            </mat-form-field>
+         </div>
+         
+         <div>
+            <mat-form-field appearance="outline" color="warn" class="grande">
+                  <mat-label>Número da coluna</mat-label>
+                  <input matInput formControlName="num_coluna">
+                  </mat-form-field> 
+               
+                </div>
+                
+         <div class="controles" >
+            <button mat-raised-button color="accent" [disabled]="cadastro.enabled"  (click)="onIncluir()">Incluir</button>
+            <button mat-raised-button color="accent" [disabled]="cadastro.invalid"  (click)="onSalvar()">Salvar</button>
+            <button mat-raised-button color="accent" [disabled]="cadastro.disabled" (click)="onCancelar()">Cancelar</button>
+         </div>
+</form>
+<div class="relat">
+      <h2>Pomares cadastrados</h2>
+      <table>
+         <tr>
+            <th>Ação</th>
+            <th>Apelido</th>
+            <th>Número da linha</th>
+            <th>Número da coluna</th>
+         </tr>
+         <tr *ngFor="let cadastro of relat">
+            <td><button>Excluir</button></td>
+            <td>{{cadastro.apelido}} </td>
+            <td>{{cadastro.num_linha}}</td>
+            <td>{{cadastro.num_coluna}}</td>  
+         </tr>
+      </table>
+</div>
+             
+   

@@ -30,34 +30,34 @@
          <input matInput formControlName="fornecedor">
          </mat-form-field> 
          </div>
-         
-               
-               <div class="controles" >
-                  <button mat-raised-button color="accent" [disabled]="formulario.enabled"  (click)="onIncluir()">Incluir</button>
-                  <button mat-raised-button color="accent" [disabled]="formulario.invalid"  (click)="onSalvar()">Salvar</button>
-                  <button mat-raised-button color="accent" [disabled]="formulario.disabled" (click)="onCancelar()">Cancelar</button>
-               </div>
-      </form>
-      <div class="relatorio">
-            <h2>Usuários cadastrados</h2>
-            <table>
-               <tr>
-                  <th>Ação</th>
-                  <th>Nome</th>
-                  <th>Telefone</th>
-                  <th>Login</th>
-                  <th>e-mail</th>
-               </tr>
-               <tr *ngFor="let usuario of relatorio">
-                  <td><button>Excluir</button></td>
-                  <td>{{usuario.nome}} {{usuario.sobrenome}}</td>
-                  <td>{{usuario.telefone}}</td>
-                  <td>{{usuario.login}}</td>
-                  <td>{{usuario.email}}</td>  
-               </tr>
-            </table>
-      </div>
+                
+         <div class="controles" >
+            <button mat-raised-button color="accent" [disabled]="material.enabled"  (click)="onIncluir()">Incluir</button>
+            <button mat-raised-button color="accent" [disabled]="material.invalid"  (click)="onSalvar()">Salvar</button>
+            <button mat-raised-button color="accent" [disabled]="material.disabled" (click)="onCancelar()">Cancelar</button>
+         </div>
+</form>
+<div class="relat">
+      <h2>Materiais cadastrados</h2>
+      <table>
+         <tr>
+            <th>Ação</th>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Tipo</th>
+            <th>Fornecedor</th>
+         </tr>
+         <tr *ngFor="let material of relat">
+            <td><button>Excluir</button></td>
+            <td>{{material.nome}} </td>
+            <td>{{material.valor}}</td>
+            <td>{{material.tipo}}</td>
+            <td>{{material.fornecedor}}</td>  
+         </tr>
+      </table>
 </div>
+             
+   
 
 
 
