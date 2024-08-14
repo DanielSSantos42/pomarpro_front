@@ -18,6 +18,9 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MaterialComponent } from './material/material.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { MovimentoComponent } from './movimento/movimento.component';
+import { ColheitaComponent } from './colheita/colheita.component';
+import { ArvoreComponent } from './arvore/arvore.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     CadUsuarioComponent,
     MaterialComponent,
     ProdutoComponent,
-    CadastroComponent
+    CadastroComponent,
+    MovimentoComponent,
+    ColheitaComponent,
+    ArvoreComponent
   ],
   imports: [
     BrowserModule,

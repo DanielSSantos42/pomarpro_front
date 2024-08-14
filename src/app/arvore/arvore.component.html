@@ -1,0 +1,91 @@
+<app-menu></app-menu>
+
+<div class="pagina">
+      <header>
+        <h1>Pomar | Árvore</h1>
+      </header>
+      <form [formGroup]="arvore">
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Defensivo</mat-label>
+               <input matInput formControlName="defensivo">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Fertilizante</mat-label>
+               <input matInput formControlName="fertilizante">
+            </mat-form-field>
+         </div>
+         
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Última verificação</mat-label>
+               <input matInput formControlName="ultima_verif">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Linha</mat-label>
+               <input matInput formControlName="linha">
+            </mat-form-field>
+         </div>
+
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Coluna</mat-label>
+               <input matInput formControlName="coluna">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Tipo</mat-label>
+               <input matInput formControlName="tipo">
+            </mat-form-field>
+         </div>
+
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Situação</mat-label>
+               <input matInput formControlName="situacao">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Pomar</mat-label>
+               <input matInput formControlName="pomar">
+            </mat-form-field>
+         </div>
+                
+         <div class="controles" >
+            <button mat-raised-button color="accent" [disabled]="arvore.enabled"  (click)="onIncluir()">Incluir</button>
+            <button mat-raised-button color="accent" [disabled]="arvore.invalid"  (click)="onSalvar()">Salvar</button>
+            <button mat-raised-button color="accent" [disabled]="arvore.disabled" (click)="onCancelar()">Cancelar</button>
+         </div>
+</form>
+<div class="relat">
+      <h2>Árvores cadastradas</h2>
+      <table>
+         <tr>
+            <th>Ação</th>
+            <th>Defensivo</th>
+            <th>Fertilizante</th>
+            <th>Última verificação</th>
+            <th>Linha</th>
+            <th>Coluna</th>
+            <th>Tipo</th>
+            <th>Situação</th>
+            <th>Pomar</th>
+         </tr>
+         <tr *ngFor="let colheita of relat">
+            <td><button>Excluir</button></td>
+            <td>{{colheita.defensivo}} </td>
+            <td>{{colheita.fertilizante}}</td>
+            <td>{{colheita.ultima_verif}}</td>  
+            <td>{{colheita.linha}} </td>
+            <td>{{colheita.coluna}}</td>
+            <td>{{colheita.tipo}}</td>
+            <td>{{colheita.situacao}} </td>
+            <td>{{colheita.pomar}}</td>
+         </tr>
+      </table>
+</div>
+             
+   
+

@@ -6,6 +6,8 @@ import { CadUsuarioComponent } from './pages/usuario/cad-usuario/cad-usuario.com
 import { MaterialComponent } from './material/material.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { MovimentoComponent } from './movimento/movimento.component';
+import { ColheitaComponent } from './colheita/colheita.component';
 
 
 const routes: Routes = [
@@ -15,7 +17,9 @@ const routes: Routes = [
   {path:'cadUsuario',component:CadUsuarioComponent},
   {path:'material', component: MaterialComponent},
   {path:'produto', component: ProdutoComponent},
-  {path:'cadastro', component: CadastroComponent}
+  {path:'cadastro', component: CadastroComponent},
+  {path:'movimento', component: MovimentoComponent},
+  {path:'colheita', component: ColheitaComponent}
 ];
 
 @NgModule({

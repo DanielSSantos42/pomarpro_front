@@ -1,0 +1,52 @@
+<app-menu></app-menu>
+
+<div class="pagina">
+      <header>
+        <h1>Pomar | Colheita</h1>
+      </header>
+      <form [formGroup]="colheita">
+         <div>
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Quantidade</mat-label>
+               <input matInput formControlName="quantidade">
+            </mat-form-field>
+            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Data da colheita</mat-label>
+               <input matInput formControlName="dt_colheita">
+            </mat-form-field>
+         </div>
+         
+         <div>
+            <mat-form-field appearance="outline" color="warn" class="grande">
+                  <mat-label>Árvore</mat-label>
+                  <input matInput formControlName="arvore">
+                  </mat-form-field> 
+               
+                </div>
+                
+         <div class="controles" >
+            <button mat-raised-button color="accent" [disabled]="colheita.enabled"  (click)="onIncluir()">Incluir</button>
+            <button mat-raised-button color="accent" [disabled]="colheita.invalid"  (click)="onSalvar()">Salvar</button>
+            <button mat-raised-button color="accent" [disabled]="colheita.disabled" (click)="onCancelar()">Cancelar</button>
+         </div>
+</form>
+<div class="relat">
+      <h2>Colheitas cadastradas</h2>
+      <table>
+         <tr>
+            <th>Ação</th>
+            <th>Quantidade</th>
+            <th>Data da colheita</th>
+            <th>Árvore</th>
+         </tr>
+         <tr *ngFor="let colheita of relat">
+            <td><button>Excluir</button></td>
+            <td>{{colheita.quantidade}} </td>
+            <td>{{colheita.dt_colheita}}</td>
+            <td>{{colheita.arvore}}</td>  
+         </tr>
+      </table>
+</div>
+             
+   
