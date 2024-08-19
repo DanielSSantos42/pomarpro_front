@@ -8,6 +8,7 @@ import { ProdutoComponent } from './produto/produto.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { MovimentoComponent } from './movimento/movimento.component';
 import { ColheitaComponent } from './colheita/colheita.component';
+import { ArvoreComponent } from './arvore/arvore.component';
 
 
 const routes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'produto', component: ProdutoComponent},
   {path:'cadastro', component: CadastroComponent},
   {path:'movimento', component: MovimentoComponent},
-  {path:'colheita', component: ColheitaComponent}
+  {path:'colheita', component: ColheitaComponent},
+  {path:'arvore', component: ArvoreComponent}
 ];
 
 @NgModule({

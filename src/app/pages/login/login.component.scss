@@ -1,23 +1,15 @@
-html,body{
-
-    background-image: url('/assets/img/teste.webp');
+.fundo{
+    width: 100vw;
+    height: 100%;
+    background-image: url('/assets/img/fundo-login.jpg');
     background-size: cover;
- }
- 
- .login{
-     margin-left: 900px;
-    
-     
- }
- 
- .login img{
-     margin-top: -150px;
-     width: 550px;
- }
+    border:1px green solid;
+}
+
  
  
  .login form button{
-     background-color: orange;
+     background-color: rgb(255, 163, 43);
      color: black;
      border-radius: 5px;
      border:black solid;

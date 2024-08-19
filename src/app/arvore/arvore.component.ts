@@ -8,43 +8,47 @@ import { ColheitaService } from '../services/colheita.service';
 import { ArvoreService } from '../services/arvore.service';
 
 @Component({
-  selector: 'app-colheita',
-  templateUrl: './colheita.component.html',
-  styleUrl: './colheita.component.scss',
+  selector: 'app-arvore',
+  templateUrl: './arvore.component.html',
+  styleUrl: './arvore.component.scss',
 })
 export class ArvoreComponent {
   constructor(private snackbar: MatSnackBar,
-    private colheitaService:ColheitaService
+    private arvoreService:ArvoreService
   ) {
-    this.buscaColheitas()
+    this.buscaArvores()
   }
 
   //Inicializa o formulário
-  colheita: FormGroup = new FormGroup({
+  arvore: FormGroup = new FormGroup({
     id: new FormControl(null),
-    quantidade: new FormControl('', Validators.required),
-    dt_colheita: new FormControl('', Validators.required),
-    arvore: new FormControl('', Validators.required),
+    defensivo: new FormControl('', Validators.required),
+    fertilizante: new FormControl('', Validators.required),
+    ultima_verif: new FormControl('', Validators.required),
+    linha: new FormControl('', Validators.required),
+    coluna: new FormControl('', Validators.required),
+    tipo: new FormControl('', Validators.required),
+    situacao: new FormControl('', Validators.required),
+    pomar: new FormControl('', Validators.required),
   });
 
   
-  //Métodos dos controles do formulário
+  
   onIncluir(){
-    this.colheita.reset();
-    this.colheita.enable();
+    this.arvore.reset();
+    this.arvore.enable();
   }
  
   onSalvar(){
-    //Guarda as informações em uma variável para melhorar acesso
-    let info = this.colheita.value;
-    //Verifica se está inserindo ou alterando com base no valor do ID (se for null, está inserido, senão está alterando)
+    let info = this.arvore.value;
+    
     if(info.id == null){
-      //Irá inserir no banco de dados um usuário
-      this.colheitaService.addColheita(info).subscribe({
+    
+      this.arvoreService.addArvore(info).subscribe({
         next: (resposta)=>{
            console.log(resposta);
            this.snackbar.open(
-            "Colheita adicionada com sucesso!",
+            "Árvore adicionada com sucesso!",
             "OK",
             {
               verticalPosition:'top',
@@ -68,23 +72,21 @@ export class ArvoreComponent {
         }
       }) 
     }else{
-      //Irá alterar o usuário no banco de dados
+      
     
     }
 
   }
 
   onCancelar(){
-     this.colheita.reset();
-     this.colheita.disable();
+     this.arvore.reset();
+     this.arvore.disable();
   }
-
-  // Função para buscar as informações e usuários
  
   relat: any[] = [];
 
-  buscaColheitas(){
-    this.colheitaService.getColheitas().subscribe({
+  buscaArvores(){
+    this.arvoreService.getArvores().subscribe({
       next:(resposta) =>{
         console.log(resposta);
         this.relat = resposta.body;
