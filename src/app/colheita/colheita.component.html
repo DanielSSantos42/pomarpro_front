@@ -13,7 +13,9 @@
             
             <mat-form-field appearance="outline" color="warn">
                <mat-label>Data da colheita</mat-label>
-               <input matInput formControlName="dt_colheita">
+               <input matInput formControlName="dt_colheita" [matDatepicker]="dt_colheita">
+               <mat-datepicker-toggle matSuffix [for]="dt_colheita"></mat-datepicker-toggle>
+               <mat-datepicker #dt_colheita></mat-datepicker>
             </mat-form-field>
          </div>
          

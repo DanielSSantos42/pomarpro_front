@@ -20,7 +20,9 @@
          <div>
             <mat-form-field appearance="outline" color="warn">
                <mat-label>Última verificação</mat-label>
-               <input matInput formControlName="ultima_verif">
+               <input matInput formControlName="ultima_verif" [matDatepicker]="ultima_verif">
+               <mat-datepicker-toggle matSuffix [for]="ultima_verif"></mat-datepicker-toggle>
+               <mat-datepicker #ultima_verif></mat-datepicker>
             </mat-form-field>
             
             <mat-form-field appearance="outline" color="warn">
@@ -73,16 +75,16 @@
             <th>Situação</th>
             <th>Pomar</th>
          </tr>
-         <tr *ngFor="let colheita of relat">
+         <tr *ngFor="let arvore of relat">
             <td><button>Excluir</button></td>
-            <td>{{colheita.defensivo}} </td>
-            <td>{{colheita.fertilizante}}</td>
-            <td>{{colheita.ultima_verif}}</td>  
-            <td>{{colheita.linha}} </td>
-            <td>{{colheita.coluna}}</td>
-            <td>{{colheita.tipo}}</td>
-            <td>{{colheita.situacao}} </td>
-            <td>{{colheita.pomar}}</td>
+            <td>{{arvore.defensivo}} </td>
+            <td>{{arvore.fertilizante}}</td>
+            <td>{{arvore.ultima_verif}}</td>  
+            <td>{{arvore.linha}} </td>
+            <td>{{arvore.coluna}}</td>
+            <td>{{arvore.ds_tipo}}</td>
+            <td>{{arvore.ds_situacao}} </td>
+            <td>{{arvore.ds_pomar}}</td>
          </tr>
       </table>
 </div>

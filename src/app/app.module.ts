@@ -21,6 +21,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { MovimentoComponent } from './movimento/movimento.component';
 import { ColheitaComponent } from './colheita/colheita.component';
 import { ArvoreComponent } from './arvore/arvore.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MAT_DATE_LOCALE, provideNativeDateAdapter } from '@angular/material/core';
+
 
 @NgModule({
   declarations: [
@@ -44,9 +47,11 @@ import { ArvoreComponent } from './arvore/arvore.component';
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDatepickerModule
+    
   ],
-  providers: [provideHttpClient(), provideAnimationsAsync()],
+  providers: [provideHttpClient(), provideAnimationsAsync(),provideNativeDateAdapter(),{ provide: MAT_DATE_LOCALE, useValue: 'pt-BR' }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

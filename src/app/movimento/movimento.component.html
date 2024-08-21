@@ -6,17 +6,21 @@
       </header>
       <form [formGroup]="movimento">
          <div>
-            <mat-form-field appearance="outline" color="warn">
-                <mat-label>Data do movimento</mat-label>
-                <input matInput formControlName="dt_movimento">
-             </mat-form-field>
             
             <mat-form-field appearance="outline" color="warn">
                <mat-label>Tipo</mat-label>
                <input matInput formControlName="tipo">
             </mat-form-field>
             
-            
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Produto</mat-label>
+               <input matInput formControlName="produto">
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" color="warn">
+               <mat-label>Quan</mat-label>
+               <input matInput formControlName="quantidade">
+            </mat-form-field>
          </div>
                 
          <div class="controles" >
@@ -30,13 +34,18 @@
       <table>
          <tr>
             <th>Ação</th>
-            <th>Data do movimento</th>
+            <th>Data do movimentação</th>
+            <th>Produto</th>
             <th>Tipo</th>
+            <th>Quantidade</th>
+
          </tr>
          <tr *ngFor="let movimento of relat">
             <td><button>Excluir</button></td>
             <td>{{movimento.dt_movimento}} </td>
-            <td>{{movimento.tipo}}</td> 
+            <td>{{movimento.descricao}}</td> 
+            <td>{{movimento.ds_tipo}}</td> 
+            <td>{{movimento.quantidade}}</td> 
          </tr>
       </table>
 </div>
