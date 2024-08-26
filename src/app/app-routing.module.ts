@@ -11,6 +11,7 @@ import { ColheitaComponent } from './colheita/colheita.component';
 import { ArvoreComponent } from './arvore/arvore.component';
 
 
+
 const routes: Routes = [
   {path:'',redirectTo:'login',pathMatch:'full'},
   {path:'login',component:LoginComponent},

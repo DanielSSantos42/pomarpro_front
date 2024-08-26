@@ -1,0 +1,44 @@
+header{
+    height: 15vh;
+    h1{
+        font-size: 1.5em;
+    }
+
+
+}
+
+.relatorio{
+    
+    width: 80%;
+    height: 30%;
+    padding-top: 10px;
+    h2{
+        font-family: Arial;
+        margin-top: 1.5em;
+    }
+    table{
+        width: 100%;
+        th{
+            border-bottom: 1px #000000 solid;
+            padding: 3px;
+            text-align: left;
+        }
+        td{
+            border-bottom: 1px #000000 solid;
+            padding: 3px;
+        }
+
+        button{
+            background-color: #e74c3c;
+                border: none;
+                color: #fff;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 5px;
+                font-size: 0.9em;
+                transition: background-color 0.3s;
+                margin-top: -10px;
+        }
+
+    }
+}

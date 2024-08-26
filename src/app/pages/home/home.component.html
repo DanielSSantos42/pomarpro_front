@@ -1,2 +1,21 @@
-<p></p>
 <app-menu></app-menu>
+<div class="pagina">
+    <header>
+        <h1>Home 🏠</h1>
+    </header>
+<div class="relatorio">
+     <h2>Estoque</h2>
+    <table>
+        <tr>
+            <th>Ação</th>
+            <th>Material</th>
+            <th>Quantidade</th>
+        </tr>
+        <tr *ngFor="let home of relatorio">
+            <td><button>Excluir</button></td>
+            <td>{{home.p_descricao}}</td>
+            <td>{{home.quantidade}}</td>
+        </tr>
+       
+    </table>
+</div>
