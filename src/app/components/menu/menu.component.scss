@@ -1,17 +1,12 @@
-body {
-    display: flex;
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    height: 100vh; 
-}
+
 
 .sidebar {
-    width: 200px;
+    width: 11vw;
     background-color: #f07c1e8f;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    height: 94%;
+    height: 94vh;
     padding: 20px;
     box-shadow: 0 0 0.4em rgb(32, 32, 32);
     position: fixed; 
@@ -97,9 +92,17 @@ body {
     }
 }
 
-.content {
-    flex-grow: 1;
-    padding: 20px;
-    margin-left: 270px; // Espaço para a sidebar
-    background-color: #f0f0f0; // Apenas para destacar o conteúdo principal
-}
+
+.rede{
+    width:11vw;
+    position:absolute;
+    bottom:0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    img{   
+        width:60%
+        
+        }
+} 
+              
